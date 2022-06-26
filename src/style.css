@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0;
+}
+
+:root {
+    --primary: #ccd5ae;
+    --secondary: #fefae0;
+    --teritary: #d4a373;
+}
+
+header {
+    background-color: var(--primary);
+    font-family: 'Rock Salt', cursive;
+}
