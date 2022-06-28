@@ -11,7 +11,7 @@ const promptStartApp = () => {
         {
             type: 'confirm',
             name: 'confirmRunApp',
-            message: "Would you like to create a Html file for your team?",
+            message: "Would you like to create a HTML file for your team?",
             default: true
         }
     ])
