@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0;
+}
+
+:root {
+    --primary: #006d77;
+    --secondary: #83c5be;
+    --teritary: #edf6f9;
+}
+
+header {
+    background-color: var(--primary);
+    font-family: 'Rock Salt', cursive;
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+}
+
+.employee-container {
+    background-color: var(--teritary);
+}
+
+.employee-info {
+    background-color: var(--secondary);
+}
+
+.employee-name {
+    font-size: 35px;
+    font-weight: bold;
+    font-style: italic;
+    font-family: 'IM Fell DW Pica', serif;
+}
+
+.employee-title {
+    font-weight: bold;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.details {
+    background-color: var(--teritary);
+}
+
+.details a {
+    text-decoration: none;
+}
+
+footer {
+    background-color: var(--primary);
+    text-align: center;
+    color: white;
+}
+
+footer span {
+    font-family: 'Rock Salt', cursive;
+}
