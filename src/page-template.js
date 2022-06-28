@@ -12,16 +12,20 @@ const generateManagerInfo = data => {
             <p><strong>Office Number: </strong>${employee.getOfficeNumber()}</p>
         </div>
     </div>
-    `;}).join('')};
+    `
+    }).join('')};
     </section>
     `
 }
 
 const generateEngineerInfo = data => {
-    return `
+    if (data.length === 0) {
+        return ''
+    } else {
+        return `
     <section class="employee-container d-flex flex-column flex-md-row justify-content-md-center">
     ${data.map(employee => {
-        return `
+            return `
         <div class="employee-info m-3 p-3">
         <h3 class="employee-name">${employee.getName()}</h3>
         <p class="employee-title"><img class="title-icon" src="../src/images/manager_icon.svg">${employee.getRole()}</p>
@@ -31,16 +35,21 @@ const generateEngineerInfo = data => {
             <p><strong>GitHub: </strong><a href="https://github.com/${employee.getGithub()}">${employee.getGithub()}</a></p>
         </div>
     </div>
-    `;}).join('')};
+    `
+        }).join('')};
     </section>
     `
-}
+    };
+};
 
 const generateInternInfo = data => {
-    return `
+    if (data.length === 0) {
+        return ''
+    } else {
+        return `
     <section class="employee-container d-flex flex-column flex-md-row justify-content-md-center">
     ${data.map(employee => {
-        return `
+            return `
         <div class="employee-info m-3 p-3">
         <h3 class="employee-name">${employee.getName()}</h3>
         <p class="employee-title"><img class="title-icon" src="../src/images/manager_icon.svg">${employee.getRole()}</p>
@@ -50,9 +59,11 @@ const generateInternInfo = data => {
             <p><strong>School: </strong>${employee.getSchool()}</a></p>
         </div>
     </div>
-    `;}).join('')};
+    `
+        }).join('')};
     </section>
     `
+    };
 };
 
 const generatePage = employeeData => {

@@ -110,6 +110,11 @@ const promptManagerInfo = employeeInfo => {
 };
 
 const promptOtherEmpInfo = employeeInfo => {
+    console.log(`
+    +++++++++++++++++++++++++++++++++++++++++++++++
+    Now Please Enter Other Team Members Information
+    +++++++++++++++++++++++++++++++++++++++++++++++
+    `)
     if (!employeeInfo.engineers) {
         employeeInfo.engineers = [];
     }
@@ -222,7 +227,6 @@ const promptOtherEmpInfo = employeeInfo => {
         },
     ])
         .then(employeeData => {
-            console.log(employeeData);
             if (employeeData.typeOfEmployee === 'Engineer') {
                 employeeInfo.engineers.push(new Engineer(employeeData.name, employeeData.id, employeeData.email, employeeData.github));
             } else {
