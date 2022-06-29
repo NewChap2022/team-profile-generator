@@ -139,7 +139,7 @@ const promptOtherEmpInfo = employeeInfo => {
                 if (name) {
                     return true;
                 } else {
-                    console.log("Please enter the manager's name!");
+                    console.log("Please enter the employee's name!");
                     return false;
                 }
             }
