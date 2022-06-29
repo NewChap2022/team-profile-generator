@@ -30,7 +30,7 @@ const generateEngineerInfo = data => {
         <div class="details m-3 px-5 py-2">
             <p><strong>ID: </strong>${employee.getId()}</p>
             <p><strong>Email: </strong><a href="mailto:example@example.com">${employee.getEmail()}</a></p>
-            <p><strong>GitHub: </strong><a href="https://github.com/${employee.getGithub()}">${employee.getGithub()}</a></p>
+            <p><strong>GitHub: </strong><a href="https://github.com/${employee.getGithub()}" target="_blank">${employee.getGithub()}</a></p>
         </div>
     </div>`}).join('')}
     </section>
