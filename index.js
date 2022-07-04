@@ -6,6 +6,7 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const { writeFile, copyFile } = require('./utils/generate-site.js');
 
+// Ask user whether to start put team's information
 const promptStartApp = () => {
     return inquirer.prompt([
         {
@@ -24,6 +25,8 @@ const promptStartApp = () => {
         })
 };
 
+// ask questions to get the information about the manager and allow the user to enter more than one manager
+// the code is checking the validation of the input
 const promptManagerInfo = employeeInfo => {
     if (!employeeInfo) {
         employeeInfo = {};
@@ -98,6 +101,7 @@ const promptManagerInfo = employeeInfo => {
             default: false
         },
     ])
+    // put the managers' data into the object of employee information
         .then(managerData => {
             employeeInfo.managers.push(new Manager(managerData.name, managerData.id, managerData.email, managerData.officeNumber));
             if (managerData.confirmAnotherManager) {
@@ -109,6 +113,7 @@ const promptManagerInfo = employeeInfo => {
         })
 };
 
+// ask questions to get the information about engineers and interns. checking the input is valid or not.
 const promptOtherEmpInfo = employeeInfo => {
     console.log(`
     +++++++++++++++++++++++++++++++++++++++++++++++
@@ -226,6 +231,7 @@ const promptOtherEmpInfo = employeeInfo => {
             default: true
         },
     ])
+    // put the engineers and interns' data into the object of employee information
         .then(employeeData => {
             if (employeeData.typeOfEmployee === 'Engineer') {
                 employeeInfo.engineers.push(new Engineer(employeeData.name, employeeData.id, employeeData.email, employeeData.github));
@@ -242,7 +248,8 @@ const promptOtherEmpInfo = employeeInfo => {
         })
 
 }
-
+// run the app from ask whether starting the app or not and then ask manager's information and then engineer and 
+// intern's information and using collecting data to generate the html page and copy css style file to the html page
 const init = () => {
     promptStartApp()
         .then(promptManagerInfo)

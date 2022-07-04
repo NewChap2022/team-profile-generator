@@ -1,3 +1,4 @@
+// use the managers data by get method to generate html page
 const generateManagerInfo = data => {
     return `
     <section class="employee-container d-flex flex-column flex-md-row justify-content-md-center">
@@ -16,6 +17,7 @@ const generateManagerInfo = data => {
     `
 }
 
+// use the engineers data by get method to generate html page and if the data does not exist, return empty string back
 const generateEngineerInfo = data => {
     if (data.length === 0) {
         return ''
@@ -38,6 +40,7 @@ const generateEngineerInfo = data => {
     };
 };
 
+// use the interns data by get method to generate html page and if the data does not exist, return empty string back
 const generateInternInfo = data => {
     if (data.length === 0) {
         return ''
@@ -60,6 +63,7 @@ const generateInternInfo = data => {
     };
 };
 
+// generate other parts of the html page
 const generatePage = employeeData => {
     return `<!DOCTYPE html >
 <html lang="en">
